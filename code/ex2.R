@@ -59,26 +59,28 @@ coeficienteVar
 setwd("C:\\projetoR\\")
 
 #Gerando grafico de Medidas de Posição
-grafico1 <- c(media,mediana,moda)
-
-#Salvando imagem grafico
+##Salvando imagem grafico
 png(filename = "graficos/ex2_graficoPosicao.png", width = 480, height = 480)
 
-#Plotando o grafico
-plot(grafico1, xlab = "Num de Casas", ylab="Media, Mediana, Moda")
+##Plotando grafico
+plot(ex2$Casas, xlab="Quantidade", ylab="Casas", main="Grafico Média| Mediana| Moda", las=1)
+abline(media, 0, col="red")
+abline(mediana, 0, col="blue")
+abline(moda, 0, col="purple")
 
-#Finalizando
+##Finalizando
 dev.off()
 
 #Gerando grafico de Medidas de Dispersão
-grafico2 <- c(variancia,desvio,coeficienteVar)
-
-#Salvando imagem grafico
+##Salvando imagem grafico
 png(filename = "graficos/ex2_graficoDispersao.png", width = 480, height = 480)
 
-#Plotando o grafico
-plot(grafico2, xlab = "Num de Casas", ylab="Media, Mediana, Moda")
+##Plotando grafico
+plot(ex2$Casas, xlab="Quantidade", ylab="Casas", main="Grafico Variancia| Desvio| CV", las=1)
+abline(variancia, 0, col="red")
+abline(desvio, 0, col="blue")
+abline(coeficienteVar, 0, col="purple")
 
-#Finalizando
+##Finalizando
 dev.off()
 
